@@ -1,0 +1,14 @@
+<header>
+<div class="logo">
+    <h1>{{ .Site.Title }}</h1>
+</div>
+<nav>
+    <ul>
+        {{ range .Site.Menus.main.ByWeight }}
+            <li><a href="{{ .URL | safeURL }}">{{ .Name }}</a></li>
+        {{ end }}
+        <li><a href="/posts/index.xml">RSS</a></li>
+    </ul>
+</nav>
+</header>
+ 

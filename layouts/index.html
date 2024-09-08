@@ -1,0 +1,17 @@
+{{ define "main" }}
+  
+  <h1>{{ .Title }}</h1>
+
+  {{ .Content }}
+
+  <h2>Roll (<a href="/tags">Tags</a>)</h2>
+
+    <ul>
+      {{ range where .Site.RegularPages "Type" "posts" }}
+        <li>({{ .Date | dateFormat "2006-01-02" }}) <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+
+{{ end }}
+
+
